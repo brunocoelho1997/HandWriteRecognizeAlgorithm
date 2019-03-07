@@ -10,28 +10,42 @@ def main():
     net = None
 
     try:
-        loadNetwork(net, FILEPATH)
+        net = loadNetwork(FILEPATH)
         print("Network loaded with success.")
 
     except:
         print("Did not found a previous network trained. Will train one.")
-        trainNetwork(net)
+        net = trainNetwork()
         # sample usage
         saveNetwork(net, FILEPATH)
+
+    print("net: " , net)
+
+    #this is giving wrong lenght data...
+    #print("Result: ", net.getNumberFromImage("number-212.png"))
+    #print("------")
+
+    print("Result: ", net.getNumberFromImage("number-219.png"))
+    print("------")
+    print("Result: ", net.getNumberFromImage("number-45.png"))
+    print("------")
+    print("Result: ", net.getNumberFromImage("eggs.png"))
 
 
 def saveNetwork(obj, filepath):
     with open(filepath, 'wb') as output:  # Overwrites any existing file.
         pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
 
-def loadNetwork(obj, filepath):
+def loadNetwork(filepath):
     with open(filepath, 'rb') as input:
         obj = pickle.load(input)
+        return obj
 
-def trainNetwork(net):
+def trainNetwork():
     training_data, validation_data, test_data = load_data_wrapper()
-    net = Network([784, 30, 10])
-    net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+    net = Network([784, 2, 10])
+    net.SGD(training_data, 5, 10, 3.0, test_data=test_data)
+    return net
 
 if __name__ == '__main__':
    main()

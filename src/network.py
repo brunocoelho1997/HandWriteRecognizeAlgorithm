@@ -12,7 +12,8 @@ and omits many desirable features.
 #### Libraries
 # Standard library
 import random
-
+from PIL import Image
+from scipy import ndimage, misc
 # Third-party libraries
 import numpy as np
 
@@ -36,14 +37,22 @@ class Network(object):
         self.weights = [np.random.randn(y, x)
                         for x, y in zip(sizes[:-1], sizes[1:])]
 
+    def __repr__(self):
+        str = "Network: TODO - need to create a string to this network... With it specs"
+        #str += "Num Layers: ", len(self.sizes)
+        #str += "Num inputs: ", ...
+        #str += "Sizes: ".join(self.sizes)
+        #str += "Biases: ".join(self.biases)
+        #str += "Weights: ".join(self.weights)
+        return str
+
     def feedforward(self, a):
         """Return the output of the network if ``a`` is input."""
         for b, w in zip(self.biases, self.weights):
             a = sigmoid(np.dot(w, a)+b)
         return a
 
-    def SGD(self, training_data, epochs, mini_batch_size, eta,
-            test_data=None):
+    def SGD(self, training_data, epochs, mini_batch_size, eta, test_data=None):
         """Train the neural network using mini-batch stochastic
         gradient descent.  The ``training_data`` is a list of tuples
         ``(x, y)`` representing the training inputs and the desired
@@ -130,6 +139,77 @@ class Network(object):
         """Return the vector of partial derivatives \partial C_x /
         \partial a for the output activations."""
         return (output_activations-y)
+
+
+    """
+    
+    ------- MY METHODS -----
+    
+    """
+
+    def getNumberFromImage(self, imageFilePath):
+        number = -1
+
+        #print("Data without reshape:")
+        #imageData = self.getDataFromImage(imageFilePath)
+        #self.printData(imageData)
+
+        print("Data reshaped:")
+        imageDataReshaped = self.getDataFromReshapedImage(imageFilePath, 24)
+        #print(imageDataReshaped)
+
+        
+        return number
+
+    #This method is reshaping the image and returns an array with the pixels colors (each position is an pixel)
+    def getDataFromReshapedImage(self, filePathImage, reshapeSize):
+
+        # source: https://stackoverflow.com/questions/40727793/how-to-convert-a-grayscale-image-into-a-list-of-pixel-values
+
+        #reshap image
+        im = Image.open(filePathImage)
+        size = reshapeSize, reshapeSize
+        im.thumbnail(size, Image.ANTIALIAS)
+
+        img = im.convert('L')  # convert image to 8-bit grayscale
+
+        data = list(img.getdata())  # convert image data to a list of integers
+
+        print("Size of data: ", len(data))
+
+        # convert that to 2D list (list of lists of integers)
+        # WIDTH, HEIGHT = img.size
+        #data = [data[offset:offset + WIDTH] for offset in range(0, WIDTH * HEIGHT, WIDTH)]
+        #print("Data as 2D:")
+        #self.printData(data)
+
+        # At this point the image's pixels are all in memory and can be accessed
+        # individually using data[row][col].
+        return data
+
+    #returns an array with the pixels colors (each position is an pixel)
+    def getDataFromImage(self, filePathImage):
+
+        # source: https://stackoverflow.com/questions/40727793/how-to-convert-a-grayscale-image-into-a-list-of-pixel-values
+
+        img = Image.open(filePathImage).convert('L')  # convert image to 8-bit grayscale
+
+        WIDTH, HEIGHT = img.size
+
+        data = list(img.getdata())  # convert image data to a list of integers
+
+        print("Size of data: ", len(data))
+
+        # convert that to 2D list (list of lists of integers)
+        data = [data[offset:offset + WIDTH] for offset in range(0, WIDTH * HEIGHT, WIDTH)]
+
+        # At this point the image's pixels are all in memory and can be accessed
+        # individually using data[row][col].
+        return data
+
+    def printData(self, data):
+        for row in data:
+            print(' '.join('{:3}'.format(value) for value in row))
 
 #### Miscellaneous functions
 def sigmoid(z):
