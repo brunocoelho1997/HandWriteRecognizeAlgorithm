@@ -77,15 +77,16 @@ class Network(object):
             for mini_batch in mini_batches:
                 self.update_mini_batch(mini_batch, eta)
             if test_data:
-                epochCorrectedTests = self.evaluate(test_data) # number of test inputs for which the neural network outputs the correct result
-                faildedTests += (n_test - epochCorrectedTests) # number of total tests which was failed
-                totalTests += n_test # number of total tests done
-                errorTaxEpoch = ((n_test-epochCorrectedTests)/n_test) * 100 # error tax of this epoch..
-                print ("Epoch {0}: {1} / {2} - error tax: {3}%".format(j, epochCorrectedTests, n_test, errorTaxEpoch))
+                epochCorrectedTests = self.evaluate(test_data)  # number of test inputs for which the neural network outputs the correct result
+                faildedTests += (n_test - epochCorrectedTests)  # number of total tests which was failed
+                totalTests += n_test  # number of total tests done
+                errorTaxEpoch = ((n_test - epochCorrectedTests) / n_test) * 100  # error tax of this epoch..
+                print("Epoch {0}: {1} / {2} - error tax: {3}%".format(j, epochCorrectedTests, n_test, errorTaxEpoch))
             else:
-                networkErrorTax = faildedTests/totalTests * 100;
                 print("Epoch {0} complete".format(j))
-                print("Error Tax of network: {0}%".format(networkErrorTax))
+
+        self.networkErrorTax = (faildedTests/totalTests) * 100;
+        print("Error Tax of network: {0}%".format(self.networkErrorTax))
 
     def update_mini_batch(self, mini_batch, eta):
         """Update the network's weights and biases by applying

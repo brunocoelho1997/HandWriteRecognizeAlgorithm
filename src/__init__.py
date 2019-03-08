@@ -25,9 +25,9 @@ def main():
     #print("Result: ", net.getNumberFromImage("number-212.png"))
     #print("------")
 
-    print("Result (4):\n", net.getNumberFromImage("number-219.png"))
+    #print("Result (4):\n", net.getNumberFromImage("number-219.png"))
     print("------")
-    print("Result (7):\n", net.getNumberFromImage("number-45.png"))
+    #print("Result (7):\n", net.getNumberFromImage("number-45.png"))
     print("------")
     #print("Result: ", net.getNumberFromImage("eggs.png"))
 
@@ -43,8 +43,8 @@ def loadNetwork(filepath):
 
 def trainNetwork():
     training_data, validation_data, test_data = load_data_wrapper()
-    net = Network([784, 30, 10])
-    net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+    net = Network([784, 60, 30, 10])
+    net.SGD(training_data, 50, 10, 3.0, test_data=test_data)
     return net
 
 if __name__ == '__main__':
