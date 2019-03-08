@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3472767-a25d-4e2f-b41e-a7956c15c8da" name="Default Changelist" comment="Can save and load trained networks">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testfile.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,15 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/HandWriteRecognizeAlgorithm$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1551990123612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/HandWriteRecognizeAlgorithm$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1552040863964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="-278">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -30,38 +30,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mnist_loader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
+            <state relative-caret-position="374">
+              <caret line="22" column="95" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="95" />
               <folding>
                 <element signature="e#372#385#0" expanded="true" />
-                <element signature="e#7828#8561#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../NeuralNetwork/venv/Lib/site-packages/numpy/polynomial/_polybase.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="623" column="8" selection-start-line="623" selection-start-column="8" selection-end-line="623" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>1.73026850e-14 1.73026850e-14 7.80856582e-05 7.80856582e-05</find>
+      <find>6.11853212e-22</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -105,7 +92,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ImageToArray" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -160,7 +147,8 @@
       <updated>1551874506239</updated>
       <workItem from="1551874507311" duration="1672000" />
       <workItem from="1551905577804" duration="5044000" />
-      <workItem from="1551982171584" duration="8116000" />
+      <workItem from="1551982171584" duration="10233000" />
+      <workItem from="1552038411069" duration="2074000" />
     </task>
     <task id="LOCAL-00001" summary="Can save and load trained networks">
       <created>1551876160265</created>
@@ -173,13 +161,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14832000" />
+    <option name="totallyTimeSpent" value="19023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1835" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25859156" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26140845" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -224,13 +212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../NeuralNetwork/venv/Lib/site-packages/numpy/polynomial/_polybase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="623" column="8" selection-start-line="623" selection-start-column="8" selection-end-line="623" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../NeuralNetwork/venv/Lib/site-packages/django/utils/baseconv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-23">
@@ -245,30 +226,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../NeuralNetwork/venv/Lib/site-packages/numpy/polynomial/_polybase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="623" column="8" selection-start-line="623" selection-start-column="8" selection-end-line="623" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mnist_loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="-278">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mnist_loader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
+        <state relative-caret-position="374">
+          <caret line="22" column="95" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="95" />
           <folding>
             <element signature="e#372#385#0" expanded="true" />
-            <element signature="e#7828#8561#0" />
           </folding>
         </state>
       </provider>

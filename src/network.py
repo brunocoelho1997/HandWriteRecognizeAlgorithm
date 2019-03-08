@@ -20,6 +20,8 @@ import numpy as np
 
 class Network(object):
 
+    networkErrorTax = None #error tax of the network. The value is defined after the network is trained
+
     def __init__(self, sizes):
         """The list ``sizes`` contains the number of neurons in the
         respective layers of the network.  For example, if the list
@@ -61,6 +63,10 @@ class Network(object):
         network will be evaluated against the test data after each
         epoch, and partial progress printed out.  This is useful for
         tracking progress, but slows things down substantially."""
+
+        faildedTests = 0
+        totalTests = 0
+
         if test_data: n_test = len(test_data)
         n = len(training_data)
         for j in range(epochs):
@@ -71,9 +77,15 @@ class Network(object):
             for mini_batch in mini_batches:
                 self.update_mini_batch(mini_batch, eta)
             if test_data:
-                print ("Epoch {0}: {1} / {2}".format(j, self.evaluate(test_data), n_test))
+                epochCorrectedTests = self.evaluate(test_data) # number of test inputs for which the neural network outputs the correct result
+                faildedTests += (n_test - epochCorrectedTests) # number of total tests which was failed
+                totalTests += n_test # number of total tests done
+                errorTaxEpoch = ((n_test-epochCorrectedTests)/n_test) * 100 # error tax of this epoch..
+                print ("Epoch {0}: {1} / {2} - error tax: {3}%".format(j, epochCorrectedTests, n_test, errorTaxEpoch))
             else:
-                print ("Epoch {0} complete".format(j))
+                networkErrorTax = faildedTests/totalTests * 100;
+                print("Epoch {0} complete".format(j))
+                print("Error Tax of network: {0}%".format(networkErrorTax))
 
     def update_mini_batch(self, mini_batch, eta):
         """Update the network's weights and biases by applying
@@ -155,10 +167,11 @@ class Network(object):
         #self.printData(imageData)
 
         print("Data reshaped:")
-        imageDataReshaped = self.getDataFromReshapedImage(imageFilePath, 24)
+        imageDataReshaped = self.getDataFromReshapedImage(imageFilePath, 28)
         #print(imageDataReshaped)
 
-        
+        number = self.feedforward(imageDataReshaped)
+
         return number
 
     #This method is reshaping the image and returns an array with the pixels colors (each position is an pixel)
